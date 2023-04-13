@@ -1,0 +1,22 @@
+<launch>
+
+    <include file="$(find path_plan)/launch/include/move_base.launch" />
+
+    <include file="$(find path_plan)/launch/include/map_server.launch">
+        <arg name="map_name" value="$(arg map_name)"/>
+    </include>
+
+    <!-- <include file="$(find path_plan)/launch/include/amcl.launch"/> -->
+    <include file="$(find path_plan)/launch/include/fake_localization.launch"/>
+
+    <!-- 3.启动路径记录节点 -->
+    <node pkg="path_plan" type="pathRecord_node" name="pathRecord_node" output="screen" >
+        <param name="path" value="$(find path_plan)/path.txt"/>
+    </node>
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find path_plan)/config/test_path.rviz"/>
+
+    <node pkg="joint_state_publisher" name="joint_state_publisher" type="joint_state_publisher" />
+    <node pkg="robot_state_publisher" name="robot_state_publisher" type="robot_state_publisher" />
+
+</launch>

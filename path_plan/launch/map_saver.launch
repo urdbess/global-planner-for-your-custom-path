@@ -1,0 +1,6 @@
+<launch>
+    <arg name="map_name" default="default_map"/>
+    <arg name="file_name" value="$(find bringup)/map/$(arg map_name)" />
+    <node name="map_save" pkg="map_server" type="map_saver" args="-f $(arg file_name)" />
+</launch>
+

@@ -1,0 +1,6 @@
+odom_frame_id: "odom"
+delta_x: 0.0
+delta_y: 0.0
+delta_yaw: 0.0
+global_frame_id: "map"
+base_frame_id: "base_footprint"

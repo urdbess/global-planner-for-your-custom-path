@@ -1,0 +1,5 @@
+ <library path="lib/libpath_planner">
+  <class name="path_planner/GlobalPlanner" type="path_planner::GlobalPlanner" base_class_type="nav_core::BaseGlobalPlanner">
+    <description>This is my path planner plugin by path_plan project.</description>
+  </class>
+ </library>
